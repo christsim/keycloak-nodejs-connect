@@ -291,7 +291,7 @@ GrantManager.prototype.userInfo = function userInfo (token, callback) {
   options.headers = {
     'Authorization': 'Bearer ' + t,
     'Accept': 'application/json',
-    'X-Client': 'keycloak-nodejs-connect'
+    // 'X-Client': 'keycloak-nodejs-connect'
   };
 
   const promise = new Promise((resolve, reject) => {
@@ -504,7 +504,7 @@ const postOptions = (manager, path) => {
   const opts = URL.parse(manager.realmUrl + realPath);
   opts.headers = {
     'Content-Type': 'application/x-www-form-urlencoded',
-    'X-Client': 'keycloak-nodejs-connect'
+    // 'X-Client': 'keycloak-nodejs-connect'
   };
   if (!manager.public) {
     opts.headers.Authorization = 'Basic ' + Buffer.from(manager.clientId + ':' + manager.secret).toString('base64');
